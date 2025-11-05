@@ -15,6 +15,7 @@ docker build -t data-version-cli -f Dockerfile .
 
 echo "Running container"
 docker run --rm --name data-version-cli -ti \
+-u "$(id -u):$(id -g)" \
 --privileged \
 --cap-add SYS_ADMIN \
 --device /dev/fuse \
